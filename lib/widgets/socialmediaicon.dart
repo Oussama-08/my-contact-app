@@ -1,0 +1,37 @@
+import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
+
+
+
+
+
+
+class SocialMediaIcon extends StatelessWidget {
+  String socialMedia;
+  String socialMedialink;
+
+  
+  SocialMediaIcon({ 
+  
+  required this.socialMedia,
+  required this.socialMedialink,
+super.key
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: InkWell(
+        child: CircleAvatar(
+          backgroundColor: Colors.transparent,
+          backgroundImage: AssetImage('assets/$socialMedia'),
+          radius: 30,
+        ),
+        onTap: () {
+          launchUrl(Uri.parse(socialMedialink),mode:LaunchMode.externalApplication);
+        },
+      ),
+    );
+  }
+}
