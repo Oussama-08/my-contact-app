@@ -26,7 +26,7 @@ class SocialMediaIcon extends StatelessWidget {
               launchUrl(Uri.parse(socialMedialink),
                   mode: LaunchMode.externalApplication);
             },
-            child: Text('start $socialMedialink' ));
+            child: Text('start social Media' ));
          });
             
         },
