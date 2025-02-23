@@ -7,7 +7,7 @@ class Contact extends StatelessWidget {
   Contact({super.key});
 
   Map <String,String> socialMedia = {
-    'facebook.png':'https://www.facebook.com/profile.php?id=100005313945397',
+    'facebook.png' :  'https://www.facebook.com/profile.php?id=100005313945397',
     'Github.png'   :  'https://github.com',
     'gmail.png'    :  'https://mail.google.com/mail/u/0/#sent',
     'instagram.png':  'https://www.instagram.com/oussama.rhm/',

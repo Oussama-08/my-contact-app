@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/start.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class SocialMediaIcon extends StatelessWidget {
   String socialMedia;
@@ -19,14 +19,16 @@ class SocialMediaIcon extends StatelessWidget {
           radius: 30,
         ),
         onTap: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (context) => StartSocialMedia(
-                      socialMedialink:
-                          'https://www.facebook.com/profile.php?id=100005313945397',
-                    )),
-          );
+         showModalBottomSheet(context: context, builder: (context){
+          return ElevatedButton(
+          style: ButtonStyle(backgroundColor:WidgetStatePropertyAll(Colors.deepOrange)),
+            onPressed: () {
+              launchUrl(Uri.parse(socialMedialink),
+                  mode: LaunchMode.externalApplication);
+            },
+            child: Text('start $socialMedialink' ));
+         });
+            
         },
       ),
     );
