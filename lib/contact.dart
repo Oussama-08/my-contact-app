@@ -2,22 +2,48 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'widgets/socialmediaicon.dart';
 
-
 class Contact extends StatelessWidget {
   Contact({super.key});
 
-  Map <String,String> socialMedia = {
-    'facebook.png' :  'https://www.facebook.com/profile.php?id=100005313945397',
-    'Github.png'   :  'https://github.com',
-    'gmail.png'    :  'https://mail.google.com/mail/u/0/#sent',
-    'instagram.png':  'https://www.instagram.com/oussama.rhm/',
-    'whatsapp.png' :  'https://wa.me/+213793651350',
-    'tiktok.png'   :  'https://www.tiktok.com/@raouflivekick/video/7465736862636772613',
-    'In.png'       :  'https://fr.linkedin.com/',
+  Map<String, String> socialMedia = {
+    'facebook.png': 'https://www.facebook.com/profile.php?id=100005313945397',
+    'Github.png': 'https://github.com',
+    'gmail.png': 'https://mail.google.com/mail/u/0/#sent',
+    'instagram.png': 'https://www.instagram.com/oussama.rhm/',
+    'whatsapp.png': 'https://wa.me/+213793651350',
+    'tiktok.png': 'https://www.tiktok.com/@raouflivekick/video/7465736862636772613',
+    'In.png': 'https://fr.linkedin.com/',
   };
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+      backgroundColor: Colors.transparent,
+      leading: Icon(
+        Icons.home,
+        color: Colors.white,
+      ),
+      title: Text(
+        'Home Page',
+        style: TextStyle(
+          color: Colors.white,
+          fontSize: 25,
+          fontWeight: FontWeight.bold,
+        ),),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 20.0),
+            child: InkWell(
+              child: Icon(
+                Icons.search,
+                size: 30,
+                color: Colors.white,
+              ),
+              onTap: () {},
+            ),
+          ),
+        ],
+      ),
       backgroundColor: Colors.blueGrey,
       body: SizedBox(
           width: double.infinity,
@@ -94,5 +120,4 @@ class Contact extends StatelessWidget {
           )),
     );
   }
-
 }
